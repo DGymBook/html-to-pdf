@@ -2,18 +2,27 @@
   "name": "@dgymbook/html-to-pdf",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/DGymBook/html-to-pdf"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup ./src/index.ts --format cjs,esm --dts --minify",
+    "lint": "tsc"
   },
   "keywords": [],
   "author": "sehalsein",
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^23.0.2"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
   }
 }
